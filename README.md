@@ -25,4 +25,6 @@ Beware of automated mines guarding the fuel asteroids. Although, some pilots hav
 
 # HTML5 port
 
-This is an HTML5 port of the original [Lua/LÖVE 2D game](https://github.com/jotson/1gam-jan2013).
+This is an HTML5 port of the original [Lua/LÖVE 2D game](https://github.com/jotson/1gam-jan2013) which was created for One Game A Month in 2013.
+
+All of the sprite graphics and effects in the game are procedural. The spooky voice comes from the [Conet Numbers Stations project](http://archive.org/details/ird059).
