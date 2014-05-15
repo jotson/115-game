@@ -78,14 +78,6 @@ GameState.prototype.create = function() {
 
     this.resetGame();
 
-    this.game.input.keyboard.addKeyCapture([
-        Phaser.Keyboard.LEFT,
-        Phaser.Keyboard.RIGHT,
-        Phaser.Keyboard.UP,
-        Phaser.Keyboard.DOWN,
-        Phaser.Keyboard.SPACEBAR
-    ]);
-
     this.game.time.advancedTiming = true;
 };
 

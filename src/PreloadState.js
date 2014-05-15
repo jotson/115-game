@@ -13,15 +13,17 @@ var PreloadState = function(game) {
 
 PreloadState.prototype.preload = function() {
     // Show progress bar
-    preloadIcon = this.game.add.sprite(0, 0, 'preloader-icon');
+    preloadIcon = this.game.add.sprite(0, 0, this.game.cache.getBitmapData('enemy'));
     preloadIcon.y = this.game.height/2 - preloadIcon.height - 20;
     preloadIcon.x = this.game.width/2 - preloadIcon.width/2;
+    preloadIcon.anchor.setTo(0.5, 0.5);
+    this.game.add.tween(preloadIcon).to({ angle: 360 }, 2000, Phaser.Easing.Linear.None, true, 0, Number.POSITIVE_INFINITY);
 
-    preloadBg = this.game.add.sprite(0, 0, 'preloader-bg');
+    preloadBg = this.game.add.sprite(0, 0, this.game.cache.getBitmapData('preloader-bg'));
     preloadBg.y = this.game.height/2 - preloadBg.height/2;
     preloadBg.x = this.game.width/2 - preloadBg.width/2;
 
-    preloadFg = this.game.add.sprite(0, 0, 'preloader-fg');
+    preloadFg = this.game.add.sprite(0, 0, this.game.cache.getBitmapData('preloader-fg'));
     preloadFg.y = this.game.height/2 - preloadFg.height/2;
     preloadFg.x = this.game.width/2 - preloadFg.width/2;
 
@@ -55,7 +57,7 @@ PreloadState.prototype.preload = function() {
 };
 
 PreloadState.prototype.create = function() {
-    this.game.stage.backgroundColor = G.backgroundColor;
+    G.setupStage();
 
     // Setup sound effects
     G.sfx.song1 = this.game.add.sound('song1', 0.3, false);
@@ -74,8 +76,6 @@ PreloadState.prototype.create = function() {
     G.sfx.selfdestruct = this.game.add.sound('selfdestruct', 1.0);
     G.sfx.thrust = this.game.add.sound('thrust', 1.0);
     G.sfx.tractorbeam = this.game.add.sound('tractorbeam', 0.25);
-
-    G.generateTextures();
 
     // Delay to allow web fonts to load
     this.game.add.text(0, 0, ".", { font: '16px "jupiter"', fill: '#000000' });

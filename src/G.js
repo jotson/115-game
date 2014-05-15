@@ -191,6 +191,16 @@ G.generateTextures = function() {
     ctx.lineWidth = 2;
     ctx.arc(5, 5, 4, 0, 2 * Math.PI);
     ctx.stroke();
+
+    // Preloader graphics
+    var preloaderfg = this.game.add.bitmapData(500, 1, 'preloader-fg', true);
+    ctx = preloaderfg.context;
+    ctx.fillStyle = 'rgba(255, 0, 0, 1.0)';
+    ctx.fillRect(0, 0, 500, 1);
+    var preloaderbg = this.game.add.bitmapData(500, 1, 'preloader-bg', true);
+    ctx = preloaderbg.context;
+    ctx.fillStyle = 'rgba(255, 0, 0, 0.25)';
+    ctx.fillRect(0, 0, 500, 1);
 };
 
 G.highlightBounce = function(object) {

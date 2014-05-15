@@ -24,6 +24,16 @@ BootState.prototype.create = function() {
     this.game.stage.backgroundColor = G.backgroundColor;
 
     this.game.state.start('preloader');
+
+    this.game.input.keyboard.addKeyCapture([
+        Phaser.Keyboard.LEFT,
+        Phaser.Keyboard.RIGHT,
+        Phaser.Keyboard.UP,
+        Phaser.Keyboard.DOWN,
+        Phaser.Keyboard.SPACEBAR
+    ]);
+
+    G.generateTextures();
 };
 
 BootState.prototype.update = function() {
