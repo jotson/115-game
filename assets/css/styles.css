@@ -1,0 +1,15 @@
+@font-face {
+  font-family: '8thcargo';
+  src: url('../fnt/8thcargo.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'jupiter';
+  src: url('../fnt/jupiter.woff') format('woff');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
