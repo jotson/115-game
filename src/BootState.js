@@ -34,6 +34,9 @@ BootState.prototype.create = function() {
     ]);
 
     G.generateTextures();
+
+    G.game.canvas.setAttribute('tabindex', '1');
+    G.game.canvas.focus();
 };
 
 BootState.prototype.update = function() {
